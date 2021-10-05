@@ -18,7 +18,7 @@
       
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-          'Authorization: token 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'
+          'Authorization: token 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'
       ));
       curl_setopt($ch, CURLOPT_URL, "https://api.github.com/search/repositories?".$query."&sort=stars&order=desc");
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,7 +34,7 @@
       $info = curl_getinfo($ch);
       curl_close($ch);
       $result = json_decode($output);
-      
+     
       if(isset($result->items))
       {
         echo json_encode($result->items);
